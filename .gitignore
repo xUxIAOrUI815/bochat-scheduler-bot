@@ -1,0 +1,8 @@
+.env
+/config.toml
+/scheduler_state.json
+*.pyc
+__pycache__/
+.pytest_cache/
+.venv/
+.vscode/

@@ -1,0 +1,34 @@
+base_url = "http://127.0.0.1:8080"
+bot_token = "b_xxx:1710000000:signature"
+state_path = "./scheduler_state.json"
+timezone = "Asia/Shanghai"
+
+[[tasks]]
+id = "daily-hello"
+type = "send_message"
+enabled = true
+group_id = "g_xxx"
+schedule = "daily"
+time = "09:00"
+message = "早上好，今天也要继续推进任务。"
+
+[[tasks]]
+id = "weekly-site-check"
+type = "check_url"
+enabled = true
+group_id = "g_xxx"
+schedule = "weekly"
+weekday = "monday"
+time = "10:00"
+url = "https://example.com/news"
+title = "Example News"
+
+[[tasks]]
+id = "hourly-site-check"
+type = "check_url"
+enabled = false
+group_id = "g_xxx"
+schedule = "interval"
+interval_secs = 3600
+url = "https://example.com/news"
+title = "Example News"

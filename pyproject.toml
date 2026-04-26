@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bochat-scheduler-bot"
+version = "0.1.0"
+description = "Config-driven scheduler bot for BoChat"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "BoChat Community" }]
+dependencies = [
+  "bochat-sdk==0.1.0",
+  "httpx>=0.27,<1.0",
+  "typer>=0.12,<1.0",
+  "beautifulsoup4>=4.12,<5",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+]
+
+[project.scripts]
+bochat-scheduler = "bochat_scheduler.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["bochat_scheduler"]
